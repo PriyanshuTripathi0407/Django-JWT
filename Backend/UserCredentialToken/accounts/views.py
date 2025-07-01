@@ -11,7 +11,6 @@ from rest_framework_simplejwt.tokens import RefreshToken
 
 
 class UserRegistrationView(APIView):
-
     def post(self,request):
         data= request.data
         serializedData= UserRegistrationSerializer(data=data)
@@ -24,7 +23,6 @@ class UserRegistrationView(APIView):
             }, status= status.HTTP_201_CREATED )
         return Response(serializedData.errors, status= status.HTTP_400_BAD_REQUEST)
     
-
 
 class UserLoginView(APIView):
     def post(self, request):
